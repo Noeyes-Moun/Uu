@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1em;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 4em;
+  text-align: center;
+}
