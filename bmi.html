@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>BMI Calculator</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bmi.html" aria-current="page">BMI Calculator</a>
+    <a href="latihan.html">Latihan</a>
+    <a href="tips.html">Tips & Tricks</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+</header>
+<main>
+  <h2>Hitung BMI dan status berat badan</h2>
+  <form id="bmiForm">
+    <label for="weight">Berat badan (kg):</label><br />
+    <input type="number" id="weight" required min="1" /><br />
+    <label for="height">Tinggi badan (cm):</label><br />
+    <input type="number" id="height" required min="30" /><br />
+    <button type="submit">Hitung BMI</button>
+  </form>
+  <div id="result"></div>
+  <div id="visualBar" style="height:30px; background:#ddd; margin-top:10px; border-radius:5px;">
+    <div id="visualFill" style="height:100%; width:0%; background:#ff4e50; border-radius:5px;"></div>
+  </div>
+</main>
+<button class="dark-mode-toggle" aria-label="Toggle dark mode">&#9790;</button>
+<script src="scripts.js"></script>
+<script>
+const form = document.getElementById('bmiForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const weight = +document.getElementById('weight').value;
+  const heightCm = +document.getElementById('height').value;
+  const heightM = heightCm / 100;
+  const bmi = weight / (heightM * heightM);
+  let status = '';
+  let color = '#ff4e50';
+  if (bmi < 18.5) {
+    status = 'Underweight';
+    color = '#3498db';
+  } else if (bmi < 24.9) {
+    status = 'Normal weight';
+    color = '#2ecc71';
+  } else if (bmi < 29.9) {
+    status = 'Overweight';
+    color = '#f1c40f';
+  } else {
+    status = 'Obese';
+    color = '#e74c3c';
+  }
+  document.getElementById('result').innerHTML = \`BMI Anda: \${bmi.toFixed(1)} (<strong>\${status}</strong>)\`;
+  const fill = document.getElementById('visualFill');
+  fill.style.width = Math.min(100, bmi * 3) + '%';
+  fill.style.backgroundColor = color;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #ff4e50, #f9d423);
+  --dark-bg: #121212;
+  --dark-text: #eee;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 0;
+  background: #fff;
+  color: #333;
+}
+header {
+  background: var(--primary-gradient);
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a[aria-current="page"] {
+  border-bottom: 2px solid white;
+}
+main {
+  padding: 1rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+button, input, textarea {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+}
+button {
+  cursor: pointer;
+  background: #ff4e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #f9d423;
+  color: #333;
+}
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: transparent;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-gradient);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 0.5rem;
+  text-align: center;
+}
+#visualBar {
+  transition: width 0.6s ease;
+}
+@media (prefers-color-scheme: dark) {
+  body.dark-mode {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  body.dark-mode header {
+    background: #b71c1c;
+  }
+  body.dark-mode nav a {
+    color: var(--dark-text);
+  }
+  body.dark-mode button {
+    background: #b71c1c;
+    color: var(--dark-text);
+  }
+  body.dark-mode button:hover {
+    background: #f44336;
+    color: white;
+  }
+  body.dark-mode table, body.dark-mode th, body.dark-mode td {
+    border-color: #555;
+  }
+}
