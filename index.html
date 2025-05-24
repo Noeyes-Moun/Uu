@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Pro</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="loader" class="loading-screen">
+    <div class="spinner"></div>
+  </div>
+  <header>
+    <h1>Workout Pro</h1>
+    <nav>
+      <a href="#muscles">Latihan</a>
+      <a href="#gallery">Video</a>
+      <a href="#bmi">BMI</a>
+    </nav>
+  </header>
+  <main>
+    <section id="muscles">
+      <h2>Latihan Otot</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <img src="images/bicep.jpg" alt="Biseps" />
+          <div class="info">
+            <h3>Biseps</h3>
+            <p>Latihan untuk memperkuat otot biseps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <h2>Video Latihan</h2>
+      <div class="video-card">
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/2tM1LFFxeKg" frameborder="0" allowfullscreen></iframe>
+        <p>Squat Tutorial</p>
+      </div>
+    </section>
+    <section id="bmi">
+      <h2>Hitung BMI Anda</h2>
+      <input type="number" id="weight" placeholder="Berat (kg)" />
+      <input type="number" id="height" placeholder="Tinggi (cm)" />
+      <button onclick="calculateBMI()">Hitung</button>
+      <p id="bmiResult"></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Workout Pro</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
